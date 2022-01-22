@@ -8,9 +8,7 @@ import javax.persistence.Id;
 public class User {
 	@Id
 	private int IdUser;
-	//@Column(name="First Name", length=50, nullable=true)
 	private String FirstName;
-	//@Column(name="Last Name", length=50, nullable=true)
 	private String LastName;
 
 	/**

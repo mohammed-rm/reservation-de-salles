@@ -17,7 +17,7 @@ public class Main {
         EntityClass.init();
 
         User user = new User();
-        user.setIdUser(1);
+        user.setIdUser(9);
         user.setFirstName("Bob");
         user.setLastName("boby");
 
