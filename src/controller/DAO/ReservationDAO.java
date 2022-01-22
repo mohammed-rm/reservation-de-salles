@@ -9,10 +9,6 @@ import java.util.ArrayList;
 
 public class ReservationDAO {
 
-    public ReservationDAO() {
-        HibernateUtils.init();
-    }
-
     /**
      * Method to create a new reservation
      *
@@ -25,8 +21,7 @@ public class ReservationDAO {
                 HibernateUtils.em.persist(r);
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Insertion of :  (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime() + ")");
-                HibernateUtils.close();
+                        "Insertion of Reservation : (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime() + ")");
             } else {
                 System.out.println("Reservation with the same Id exists in the DataBase!");
             }
@@ -47,15 +42,13 @@ public class ReservationDAO {
                 HibernateUtils.em.remove(HibernateUtils.em.find(Reservation.class, r.getIdReservation()));
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Deletion of :  (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime() + ")");
-                HibernateUtils.close();
+                        "Deletion of Reservation : (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime() + ")");
             } else {
                 System.out.println("This reservation does not exist!");
             }
         } catch (HibernateException err) {
             System.out.println(err.getCause() + "\n" + err.getMessage());
         }
-
     }
 
     /**
@@ -70,15 +63,13 @@ public class ReservationDAO {
                 HibernateUtils.em.merge(r);
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Update made of :  (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime()+ ")");
-                HibernateUtils.close();
+                        "Update made of Reservation : (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime()+ ")");
             } else {
                 System.out.println("This user does not exist!");
             }
         } catch (HibernateException err) {
             System.out.println(err.getCause() + "\n" + err.getMessage());
         }
-
     }
 
     /**

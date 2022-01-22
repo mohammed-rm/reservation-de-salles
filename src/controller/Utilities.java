@@ -1,15 +1,14 @@
 package controller;
 
-import java.sql.Connection;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import controller.DAO.ReservationDAO;
 import controller.DAO.RoomDAO;
 import model.Reservation;
 import model.Room;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Utilities {
 

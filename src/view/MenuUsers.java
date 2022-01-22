@@ -1,18 +1,13 @@
 package view;
 
-import java.awt.Color;
-import java.awt.Font;
+import controller.DAO.UserDAO;
+import model.User;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-import controller.DAO.UserDAO;
-import model.User;
 
 @SuppressWarnings("serial")
 public class MenuUsers extends JPanel implements ActionListener {

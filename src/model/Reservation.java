@@ -1,11 +1,12 @@
 package model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name = "Reservation")
 public class Reservation {
 	@Id
 	private int IdReservation;

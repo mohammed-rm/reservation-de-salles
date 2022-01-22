@@ -9,11 +9,6 @@ import java.util.ArrayList;
 
 public class RoomDAO {
 
-    public RoomDAO() {
-        HibernateUtils.init();
-    }
-
-
     /**
      * Method to create a new room
      *
@@ -26,8 +21,7 @@ public class RoomDAO {
                 HibernateUtils.em.persist(r);
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Insertion of : Room " + r.getIdRoom());
-                HibernateUtils.close();
+                        "Insertion of Room : " + r.getIdRoom());
             } else {
                 System.out.println("A room with the same Id exists in the DataBase!");
             }
@@ -48,15 +42,13 @@ public class RoomDAO {
                 HibernateUtils.em.remove(HibernateUtils.em.find(Room.class, r.getIdRoom()));
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Deletion of : Room " + r.getIdRoom());
-                HibernateUtils.close();
+                        "Deletion of Room : " + r.getIdRoom());
             } else {
                 System.out.println("This room does not exist!");
             }
         } catch (HibernateException err) {
             System.out.println(err.getCause() + "\n" + err.getMessage());
         }
-
     }
 
     /**

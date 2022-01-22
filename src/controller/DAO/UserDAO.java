@@ -9,10 +9,6 @@ import java.util.ArrayList;
 
 public class UserDAO {
 
-    public UserDAO() {
-        HibernateUtils.init();
-    }
-
     /**
      * Method to create a new user
      *
@@ -25,8 +21,7 @@ public class UserDAO {
                 HibernateUtils.em.persist(u);
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Insertion of :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
-                HibernateUtils.close();
+                        "Insertion of User : (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
             } else {
                 System.out.println("User with the same Id exists in the DataBase!");
             }
@@ -47,15 +42,13 @@ public class UserDAO {
                 HibernateUtils.em.remove(HibernateUtils.em.find(User.class, u.getIdUser()));
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Deletion of :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
-                HibernateUtils.close();
+                        "Deletion of User :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
             } else {
                 System.out.println("This user does not exist!");
             }
         } catch (HibernateException err) {
             System.out.println(err.getCause() + "\n" + err.getMessage());
         }
-
     }
 
     /**
@@ -70,15 +63,13 @@ public class UserDAO {
                 HibernateUtils.em.merge(u);
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
-                        "Update made of :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
-                HibernateUtils.close();
+                        "Update made of User : (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
             } else {
                 System.out.println("This user does not exist!");
             }
         } catch (HibernateException err) {
             System.out.println(err.getCause() + "\n" + err.getMessage());
         }
-
     }
 
     /**
