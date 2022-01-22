@@ -2,10 +2,8 @@ package model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
 public class User {
     @Id
     private int IdUser;
@@ -20,7 +18,7 @@ public class User {
     }
 
     /**
-     * @param idUser
+     * @param idUser id
      */
     public void setIdUser(int idUser) {
         IdUser = idUser;
@@ -34,21 +32,21 @@ public class User {
     }
 
     /**
-     * @param firstName
+     * @param firstName first name
      */
     public void setFirstName(String firstName) {
         FirstName = firstName;
     }
 
     /**
-     * @return
+     * @return LastName
      */
     public String getLastName() {
         return LastName;
     }
 
     /**
-     * @param lastName
+     * @param lastName last name
      */
     public void setLastName(String lastName) {
         LastName = lastName;

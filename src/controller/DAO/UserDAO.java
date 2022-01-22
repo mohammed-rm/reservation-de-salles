@@ -81,7 +81,7 @@ public class UserDAO {
     /**
      * Method to obtain the users list from the database
      *
-     * @return list the list of users
+     * @return list
      */
     public ArrayList<User> read() {
         try {
