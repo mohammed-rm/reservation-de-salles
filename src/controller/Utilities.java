@@ -36,12 +36,12 @@ public class Utilities {
 	/**
 	 * This method returns the available room for the chosen period by the user
 	 * 
-	 * @param conn
+	 *
 	 * @param beginDate
 	 * @param endDate
 	 * @return ret
 	 */
-	public static ArrayList<Room> getAvailableRooms(Connection conn, LocalDateTime beginDate, LocalDateTime endDate) {
+	public static ArrayList<Room> getAvailableRooms(LocalDateTime beginDate, LocalDateTime endDate) {
 		RoomDAO daoroom = new RoomDAO();
 		ReservationDAO daoresa = new ReservationDAO();
 
