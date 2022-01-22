@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import controller.DBCommunication;
 import controller.DAO.UserDAO;
 import model.User;
 
