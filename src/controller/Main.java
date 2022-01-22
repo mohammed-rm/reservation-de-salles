@@ -35,7 +35,7 @@ public class Main {
         //us.read();
 
         Room room = new Room();
-        room.setIdRoom(108);
+        room.setIdRoom(107);
         RoomDAO rm = new RoomDAO();
         //rm.create(room);
         //rm.delete(room);
@@ -43,7 +43,7 @@ public class Main {
 
 
         Reservation resa = new Reservation();
-        resa.setIdReservation(4);
+        resa.setIdReservation(1);
         resa.setUser(user);
         resa.setRoom(room);
         resa.setBeginTime(resa.stringToLDT("2022-01-21 10:00:00"));

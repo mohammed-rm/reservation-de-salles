@@ -10,9 +10,9 @@ public class Reservation {
 	@Id
 	private int IdReservation;
 
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Room room;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private User user;
 	private LocalDateTime BeginTime;
 	private LocalDateTime EndTime;
