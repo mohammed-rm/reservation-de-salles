@@ -42,8 +42,8 @@ public class Utilities {
 	 * @return ret
 	 */
 	public static ArrayList<Room> getAvailableRooms(Connection conn, LocalDateTime beginDate, LocalDateTime endDate) {
-		RoomDAO daoroom = new RoomDAO(conn);
-		ReservationDAO daoresa = new ReservationDAO(conn);
+		RoomDAO daoroom = new RoomDAO();
+		ReservationDAO daoresa = new ReservationDAO();
 
 		ArrayList<Integer> unavailable = new ArrayList<Integer>();
 
@@ -52,10 +52,10 @@ public class Utilities {
 			Reservation resa = i.next();
 			// Begin time included = overlap with this period
 			if (beginDate.isAfter(resa.getBeginTime()) && beginDate.isBefore(resa.getEndTime())) {
-				unavailable.add(resa.getRoom());
+				unavailable.add(resa.getRoom().getIdRoom());
 				// end time included = overlap with this period
 			} else if (endDate.isAfter(resa.getBeginTime()) && beginDate.isBefore(resa.getEndTime())) {
-				unavailable.add(resa.getRoom());
+				unavailable.add(resa.getRoom().getIdRoom());
 			}
 		}
 
