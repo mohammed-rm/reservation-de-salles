@@ -1,6 +1,8 @@
 package controller;
 
+import controller.DAO.RoomDAO;
 import controller.DAO.UserDAO;
+import model.Room;
 import model.User;
 
 public class Main {
@@ -28,7 +30,15 @@ public class Main {
         //us.create(user);
         //us.delete(user);
         //us.update(user);
-        us.read();
+        //us.read();
+
+        Room room = new Room();
+        room.setIdRoom(108);
+        RoomDAO rm = new RoomDAO();
+        //rm.create(room);
+        //rm.delete(room);
+        //rm.read();
+
 
         HibernateUtils.close();
 
