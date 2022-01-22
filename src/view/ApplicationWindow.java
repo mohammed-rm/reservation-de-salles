@@ -15,6 +15,7 @@ public class ApplicationWindow extends JFrame {
 	private Menu menu;
 	private Bottom bottom;
 	private MenuRooms room;
+	private MenuSelection select;
 	private final JLabel labClose;
 	private final JLabel labMin;
 	private final JLabel labLogo;
@@ -87,6 +88,7 @@ public class ApplicationWindow extends JFrame {
 		menu = new Menu();
 		bottom = new Bottom();
 		room = new MenuRooms();
+		select = new MenuSelection();
 
 	}
 
@@ -328,11 +330,8 @@ public class ApplicationWindow extends JFrame {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MenuSelection settings = new MenuSelection();
 				internalPanel.removeAll();
-
-				internalPanel.add(settings.createLabel());
-				internalPanel.add(settings.createCombo());
+				internalPanel.add(select.createPanSelection());
 
 				frame.pack();
 				frame.repaint();
