@@ -14,6 +14,7 @@ public class ApplicationWindow extends JFrame {
 	private InternalPanel internalPanel;
 	private Menu menu;
 	private Bottom bottom;
+	private MenuRooms room;
 	private final JLabel labClose;
 	private final JLabel labMin;
 	private final JLabel labLogo;
@@ -85,6 +86,7 @@ public class ApplicationWindow extends JFrame {
 		internalPanel = new InternalPanel();
 		menu = new Menu();
 		bottom = new Bottom();
+		room = new MenuRooms();
 
 	}
 
@@ -300,7 +302,7 @@ public class ApplicationWindow extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				internalPanel.removeAll();
-
+				internalPanel.add(room);
 				frame.pack();
 				frame.repaint();
 			}
