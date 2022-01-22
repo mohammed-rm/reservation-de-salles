@@ -42,8 +42,8 @@ public class ApplicationWindow extends JFrame {
 		this.labLogo = new JLabel();
 		this.labHome = new JLabel("Home");
 		this.labUsers = new JLabel("Manage Users");
-		this.labroom = new JLabel("Choose a Room");
-		this.labSettings = new JLabel("Settings");
+		this.labroom = new JLabel("Manage Rooms");
+		this.labSettings = new JLabel("Choose a Room");
 
 		initFrame();
 		initComponents();
@@ -260,7 +260,7 @@ public class ApplicationWindow extends JFrame {
 		menu.add(labHome);
 
 		labUsers.setIcon(IconsResize
-				.getScaledImage(new ImageIcon(ApplicationWindow.class.getResource("/icons/USER.png")), 40, 40));
+				.getScaledImage(new ImageIcon(ApplicationWindow.class.getResource("/icons/user.png")), 40, 40));
 		labUsers.setHorizontalAlignment(SwingConstants.LEFT);
 		labUsers.setVerticalAlignment(SwingConstants.BOTTOM);
 		labUsers.setFont(new Font("Baskerville Old Face", Font.PLAIN, 22));
@@ -316,7 +316,7 @@ public class ApplicationWindow extends JFrame {
 		menu.add(labroom);
 
 		labSettings.setIcon(IconsResize
-				.getScaledImage(new ImageIcon(ApplicationWindow.class.getResource("/icons/settings.png")), 40, 40));
+				.getScaledImage(new ImageIcon(ApplicationWindow.class.getResource("/icons/choose.png")), 40, 40));
 		labSettings.setFont(new Font("Baskerville Old Face", Font.PLAIN, 22));
 		labSettings.setHorizontalAlignment(SwingConstants.LEFT);
 		labSettings.setVerticalAlignment(SwingConstants.BOTTOM);
