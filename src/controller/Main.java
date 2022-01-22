@@ -13,9 +13,9 @@ public class Main {
         HibernateUtils.init();
 
         User user = new User();
-        user.setIdUser(0);
-        user.setFirstName("Bob");
-        user.setLastName("boby");
+        user.setIdUser(2);
+        user.setFirstName("Bobooooo");
+        user.setLastName("bobyyyyy");
 
         /*System.out.println(user.getFirstName() + " " + user.getLastName());
         HibernateUtils.em.getTransaction().begin();
@@ -25,8 +25,10 @@ public class Main {
         */
 
         UserDAO us = new UserDAO();
-        us.create(user);
-        us.delete(user);
+        //us.create(user);
+        //us.delete(user);
+        //us.update(user);
+        us.read();
 
         HibernateUtils.close();
 
