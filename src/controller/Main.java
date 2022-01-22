@@ -27,10 +27,9 @@ public class Main {
         });
 
         /*
-
         User user = new User();
         user.setIdUser(76);
-        user.setFirstName("tomY");
+        user.setFirstName("bob");
         user.setLastName("tom");
         UserDAO us = new UserDAO();
         us.create(user);
@@ -53,13 +52,9 @@ public class Main {
         resa.setEndTime(resa.stringToLDT("2022-01-21 12:00:00"));
         ReservationDAO resD = new ReservationDAO();
         resD.create(resa);
-        //resD.delete(resa);
+        //resD.delete(resa);*/
 
-        HibernateUtils.close();
-
-        */
-
-
+        //HibernateUtils.close();
 
     }
 }
