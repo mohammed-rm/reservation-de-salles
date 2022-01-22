@@ -333,7 +333,7 @@ public class MenuUsers extends JPanel implements ActionListener {
 									&& Pattern.matches("[a-zA-Z]+", inputNewFName)) {
 								User us = new User();
 								us.setIdUser(resultId);
-								us.setFirstName(inputFName);
+								us.setFirstName(inputNewFName);
 								us.setLastName(inputLName);
 								user.update(us);
 								frame.dialogFrameUpdate();
@@ -342,7 +342,7 @@ public class MenuUsers extends JPanel implements ActionListener {
 								User us = new User();
 								us.setIdUser(resultId);
 								us.setFirstName(inputFName);
-								us.setLastName(inputLName);
+								us.setLastName(inputNewLName);
 								user.update(us);
 								frame.dialogFrameUpdate();
 							} else if (inputNewFName.length() != 0 && inputNewLName.length() != 0
@@ -350,8 +350,8 @@ public class MenuUsers extends JPanel implements ActionListener {
 									&& Pattern.matches("[a-zA-Z]+", inputNewLName)) {
 								User us = new User();
 								us.setIdUser(resultId);
-								us.setFirstName(inputFName);
-								us.setLastName(inputLName);
+								us.setFirstName(inputNewFName);
+								us.setLastName(inputNewLName);
 								user.update(us);
 								frame.dialogFrameUpdate();
 							}
