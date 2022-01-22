@@ -16,15 +16,15 @@ public class Main {
     public static void main(String[] args){
 
 
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ApplicationWindow app = new ApplicationWindow();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//        EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                try {
+//                    ApplicationWindow app = new ApplicationWindow();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
 
         HibernateUtils.init();
 
@@ -55,14 +55,14 @@ public class Main {
 
 
         Reservation resa = new Reservation();
-        resa.setIdReservation(6);
+        resa.setIdReservation(7);
         resa.setUser(user);
         resa.setRoom(room);
         resa.setBeginTime(resa.stringToLDT("2022-01-21 10:00:00"));
         resa.setEndTime(resa.stringToLDT("2022-01-21 12:00:00"));
 
         ReservationDAO resD = new ReservationDAO();
-        //resD.create(resa);
+        resD.create(resa);
         //resD.delete(resa);
 
         HibernateUtils.close();
