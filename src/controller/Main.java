@@ -35,7 +35,7 @@ public class Main {
         //us.read();
 
         Room room = new Room();
-        room.setIdRoom(107);
+        room.setIdRoom(108);
         RoomDAO rm = new RoomDAO();
         //rm.create(room);
         //rm.delete(room);
@@ -43,14 +43,15 @@ public class Main {
 
 
         Reservation resa = new Reservation();
-        resa.setIdReservation(1);
+        resa.setIdReservation(6);
         resa.setUser(user);
         resa.setRoom(room);
         resa.setBeginTime(resa.stringToLDT("2022-01-21 10:00:00"));
         resa.setEndTime(resa.stringToLDT("2022-01-21 12:00:00"));
 
         ReservationDAO resD = new ReservationDAO();
-        resD.create(resa);
+        //resD.create(resa);
+        //resD.delete(resa);
 
         HibernateUtils.close();
 
