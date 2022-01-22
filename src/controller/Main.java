@@ -8,6 +8,7 @@ import model.Room;
 import model.User;
 import view.ApplicationWindow;
 
+
 import java.awt.*;
 
 public class Main {
