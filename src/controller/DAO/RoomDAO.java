@@ -27,6 +27,7 @@ public class RoomDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Insertion of : Room " + r.getIdRoom());
+                HibernateUtils.close();
             } else {
                 System.out.println("A room with the same Id exists in the DataBase!");
             }
@@ -48,6 +49,7 @@ public class RoomDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Deletion of : Room " + r.getIdRoom());
+                HibernateUtils.close();
             } else {
                 System.out.println("This room does not exist!");
             }

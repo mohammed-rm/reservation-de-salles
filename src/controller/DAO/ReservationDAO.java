@@ -26,6 +26,7 @@ public class ReservationDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Insertion of :  (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime() + ")");
+                HibernateUtils.close();
             } else {
                 System.out.println("Reservation with the same Id exists in the DataBase!");
             }
@@ -47,6 +48,7 @@ public class ReservationDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Deletion of :  (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime() + ")");
+                HibernateUtils.close();
             } else {
                 System.out.println("This reservation does not exist!");
             }
@@ -69,6 +71,7 @@ public class ReservationDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Update made of :  (" + r.getIdReservation() + "," + r.getRoom() + "," + r.getUser() + "," + r.getBeginTime() + ","+ r.getEndTime()+ ")");
+                HibernateUtils.close();
             } else {
                 System.out.println("This user does not exist!");
             }

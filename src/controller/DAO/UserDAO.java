@@ -26,6 +26,7 @@ public class UserDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Insertion of :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
+                HibernateUtils.close();
             } else {
                 System.out.println("User with the same Id exists in the DataBase!");
             }
@@ -47,6 +48,7 @@ public class UserDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Deletion of :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
+                HibernateUtils.close();
             } else {
                 System.out.println("This user does not exist!");
             }
@@ -69,6 +71,7 @@ public class UserDAO {
                 HibernateUtils.em.getTransaction().commit();
                 System.out.println(
                         "Update made of :  (" + u.getIdUser() + "," + u.getFirstName() + "," + u.getLastName() + ")");
+                HibernateUtils.close();
             } else {
                 System.out.println("This user does not exist!");
             }
