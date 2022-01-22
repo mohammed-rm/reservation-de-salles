@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class EntityClass {
+public class HibernateUtils {
 
 	private static EntityManagerFactory emf;
 	public static EntityManager em;

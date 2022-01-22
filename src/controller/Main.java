@@ -1,11 +1,7 @@
 package controller;
 
+import controller.DAO.UserDAO;
 import model.User;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.lang.module.Configuration;
 
 public class Main {
 
@@ -14,20 +10,25 @@ public class Main {
 
         System.out.println("test");
 
-        EntityClass.init();
+        HibernateUtils.init();
 
         User user = new User();
-        user.setIdUser(9);
+        user.setIdUser(0);
         user.setFirstName("Bob");
         user.setLastName("boby");
 
-        System.out.println(user.getFirstName() + " " + user.getLastName());
+        /*System.out.println(user.getFirstName() + " " + user.getLastName());
+        HibernateUtils.em.getTransaction().begin();
+        HibernateUtils.em.persist(user);
+        HibernateUtils.em.getTransaction().commit();
 
-        EntityClass.em.getTransaction().begin();
-        EntityClass.em.persist(user);
-        EntityClass.em.getTransaction().commit();
+        */
 
-        EntityClass.close();
+        UserDAO us = new UserDAO();
+        us.create(user);
+        us.delete(user);
+
+        HibernateUtils.close();
 
 
 

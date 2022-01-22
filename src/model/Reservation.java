@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
+@Table(name = "Reservation")
 public class Reservation {
 	@Id
 	private int IdReservation;
