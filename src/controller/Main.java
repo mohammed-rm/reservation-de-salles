@@ -40,10 +40,10 @@ public class Main {
 
         Room room = new Room();
         room.setIdRoom(67);
-        RoomDAO rm = new RoomDAO();
+        //RoomDAO rm = new RoomDAO();
         //rm.create(room);
         //rm.delete(room);
-        rm.read();
+        //rm.read();
 
         Reservation resa = new Reservation();
         resa.setIdReservation(970);
@@ -55,7 +55,7 @@ public class Main {
         //ReservationDAO resD = new ReservationDAO();
         //resD.create(resa);
         //resD.delete(resa);
-        //HibernateUtils.close();
+        HibernateUtils.close();
 
 
 
