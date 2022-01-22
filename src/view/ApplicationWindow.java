@@ -302,7 +302,7 @@ public class ApplicationWindow extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				internalPanel.removeAll();
-				internalPanel.add(room);
+				internalPanel.add(room.createPanRooms());
 				frame.pack();
 				frame.repaint();
 			}
@@ -328,7 +328,7 @@ public class ApplicationWindow extends JFrame {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MenuSettings settings = new MenuSettings();
+				MenuSelection settings = new MenuSelection();
 				internalPanel.removeAll();
 
 				internalPanel.add(settings.createLabel());

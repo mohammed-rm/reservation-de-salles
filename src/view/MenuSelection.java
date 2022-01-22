@@ -3,7 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-public class MenuSettings extends Component {
+public class MenuSelection extends Component {
 
 	private static final long serialVersionUID = 1L;
 	private JComboBox<String> comboBox;
@@ -12,7 +12,7 @@ public class MenuSettings extends Component {
 	/**
 	 * Default constructor
 	 */
-	public MenuSettings() {
+	public MenuSelection() {
 		comboBox = new JComboBox<String>();
 		labLanguage = new JLabel("Select a language");
 	}

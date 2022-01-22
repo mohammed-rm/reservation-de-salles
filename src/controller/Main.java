@@ -6,14 +6,17 @@ import controller.DAO.UserDAO;
 import model.Reservation;
 import model.Room;
 import model.User;
+import view.ApplicationWindow;
+
+import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args){
 
 
-        HibernateUtils.init();
-        /*EventQueue.invokeLater(new Runnable() {
+        //HibernateUtils.init();
+        EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
                     ApplicationWindow app = new ApplicationWindow();
@@ -21,9 +24,9 @@ public class Main {
                   e.printStackTrace();
               }
           }
-        });*/
+        });
 
-        //HibernateUtils.init();
+        /*
 
         User user = new User();
         user.setIdUser(76);
@@ -54,7 +57,7 @@ public class Main {
 
         HibernateUtils.close();
 
-
+        */
 
 
 
