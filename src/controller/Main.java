@@ -6,13 +6,24 @@ import controller.DAO.UserDAO;
 import model.Reservation;
 import model.Room;
 import model.User;
+import view.ApplicationWindow;
+
+import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args){
 
 
-        System.out.println("test");
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    ApplicationWindow app = new ApplicationWindow();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         HibernateUtils.init();
 
