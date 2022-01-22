@@ -230,8 +230,7 @@ public class MenuUsers extends JPanel implements ActionListener {
 	 * @param event
 	 */
 	public void actionPerformed(ActionEvent event) {
-		DBCommunication dbCom = new DBCommunication();
-		UserDAO user = new UserDAO(dbCom.getConn());
+		UserDAO user = new UserDAO();
 		DialogueFrame frame = new DialogueFrame();
 		Object source = event.getSource();
 		String inputId = new String();
@@ -257,7 +256,10 @@ public class MenuUsers extends JPanel implements ActionListener {
 					if (isNumber && isFName && isLName) {
 						resultId = Integer.parseInt(inputId);
 						if ((resultId >= 0)) {
-							User us = new User(resultId, inputFName, inputLName);
+							User us = new User();
+							us.setIdUser(resultId);
+							us.setFirstName(inputFName);
+							us.setLastName(inputLName);
 							user.create(us);
 							frame.dialogFrameAdd();
 						} else {
@@ -290,7 +292,10 @@ public class MenuUsers extends JPanel implements ActionListener {
 					if (isNumber && isFName && isLName) {
 						resultId = Integer.parseInt(inputId);
 						if ((resultId >= 0)) {
-							User us = new User(resultId, inputFName, inputLName);
+							User us = new User();
+							us.setIdUser(resultId);
+							us.setFirstName(inputFName);
+							us.setLastName(inputLName);
 							user.delete(us);
 							frame.dialogFrameRemove();
 						} else {
@@ -327,18 +332,27 @@ public class MenuUsers extends JPanel implements ActionListener {
 						if ((resultId >= 0)) {
 							if (inputNewFName.length() != 0 && inputNewLName.length() == 0
 									&& Pattern.matches("[a-zA-Z]+", inputNewFName)) {
-								User us = new User(resultId, inputNewFName, inputLName);
+								User us = new User();
+								us.setIdUser(resultId);
+								us.setFirstName(inputFName);
+								us.setLastName(inputLName);
 								user.update(us);
 								frame.dialogFrameUpdate();
 							} else if (inputNewFName.length() == 0 && inputNewLName.length() != 0
 									&& Pattern.matches("[a-zA-Z]+", inputNewLName)) {
-								User us = new User(resultId, inputFName, inputNewLName);
+								User us = new User();
+								us.setIdUser(resultId);
+								us.setFirstName(inputFName);
+								us.setLastName(inputLName);
 								user.update(us);
 								frame.dialogFrameUpdate();
 							} else if (inputNewFName.length() != 0 && inputNewLName.length() != 0
 									&& Pattern.matches("[a-zA-Z]+", inputNewFName)
 									&& Pattern.matches("[a-zA-Z]+", inputNewLName)) {
-								User us = new User(resultId, inputNewFName, inputNewLName);
+								User us = new User();
+								us.setIdUser(resultId);
+								us.setFirstName(inputFName);
+								us.setLastName(inputLName);
 								user.update(us);
 								frame.dialogFrameUpdate();
 							}
