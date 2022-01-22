@@ -8,107 +8,52 @@ import java.time.format.DateTimeFormatter;
 public class Reservation {
 	@Id
 	private int IdReservation;
-	private int Room;
-	private int User;
+
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Room room;
+	@ManyToOne(cascade=CascadeType.ALL)
+	private User user;
 	private LocalDateTime BeginTime;
 	private LocalDateTime EndTime;
 
-	/**
-	 * @return
-	 */
 	public int getIdReservation() {
 		return IdReservation;
 	}
 
-	/**
-	 * @param idReservation
-	 */
 	public void setIdReservation(int idReservation) {
 		IdReservation = idReservation;
 	}
 
-	/**
-	 * @return
-	 */
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public LocalDateTime getBeginTime() {
 		return BeginTime;
 	}
 
-	/**
-	 * @return
-	 */
-	public String getBeginTimeString() {
-		return this.LDTtoString(BeginTime);
-	}
-
-	/**
-	 * @param beginTime
-	 */
 	public void setBeginTime(LocalDateTime beginTime) {
 		BeginTime = beginTime;
 	}
 
-	/**
-	 * @param beginTime
-	 */
-	public void setBeginTimeString(String beginTime) {
-		BeginTime = this.stringToLDT(beginTime);
-	}
-
-	/**
-	 * @return
-	 */
 	public LocalDateTime getEndTime() {
 		return EndTime;
 	}
 
-	/**
-	 * @return
-	 */
-	public String getEndTimeString() {
-		return this.LDTtoString(EndTime);
-	}
-
-	/**
-	 * @param endTime
-	 */
 	public void setEndTime(LocalDateTime endTime) {
 		EndTime = endTime;
-	}
-
-	/**
-	 * @param endTime
-	 */
-	public void setEndTimeString(String endTime) {
-		EndTime = this.stringToLDT(endTime);
-	}
-
-	/**
-	 * @return
-	 */
-	public int getRoom() {
-		return Room;
-	}
-
-	/**
-	 * @param room
-	 */
-	public void setRoom(int room) {
-		Room = room;
-	}
-
-	/**
-	 * @return
-	 */
-	public int getUser() {
-		return User;
-	}
-
-	/**
-	 * @param user
-	 */
-	public void setUser(int user) {
-		User = user;
 	}
 
 	/**

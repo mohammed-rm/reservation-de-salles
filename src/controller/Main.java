@@ -21,6 +21,8 @@ public class Main {
         user.setFirstName("Bob");
         user.setLastName("boby");
 
+        System.out.println(user.getFirstName() + " " + user.getLastName());
+
         EntityClass.em.getTransaction().begin();
         EntityClass.em.persist(user);
         EntityClass.em.getTransaction().commit();
